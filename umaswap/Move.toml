@@ -1,0 +1,11 @@
+[package]
+name = "umaswap"
+version = "0.0.1"
+
+[dependencies]
+Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet"}
+
+[addresses]
+sui = "0x2"
+# umaswap = "0x0"
+umaswap = "0xa49083dd15863269c84624e83201ede24fc397aa"

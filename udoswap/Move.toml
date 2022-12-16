@@ -1,0 +1,11 @@
+[package]
+name = "udoswap"
+version = "0.0.1"
+
+[dependencies]
+Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet"}
+
+[addresses]
+sui = "0x2"
+# udoswap = "0x0"
+udoswap = "0x2e244acbb4b394e0c254bdee10c4cd80899a1889"

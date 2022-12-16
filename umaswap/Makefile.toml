@@ -1,0 +1,145 @@
+
+[tasks."uma:build"]
+script = '''
+sui move build
+'''
+
+[tasks."uma:test"]
+script = '''
+sui move test
+'''
+
+[tasks."uma:deploy:devnet"]
+dependencies = [
+  "uma:build", # "test:module",
+]
+script = '''
+sui client publish --gas-budget 30000
+'''
+
+[tasks."admin:init:default"]
+dependencies = [
+  "admin:init:BTC/USDC", # "admin:add:BTC/USDC",
+  "admin:init:ETH/USDC", # "admin:add:ETH/USDC",
+  "admin:init:USDT/USDC", # "admin:add:USDT/USDC",
+]
+
+[tasks."admin:init:BTC/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function create_pool \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_btc::DEVNET_BTC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    30 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:add:BTC/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function add_liquidity \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_btc::DEVNET_BTC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    0xa039c832e1b96fe2d999fc97747ced8f71884e33 \
+    0xcae9e5f66d567429c8e11e32872024d3b47d767b \
+    0x89c760727b548b111e2bee1933c18674be1e4063 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:swap:BTC/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \ \
+  --module dex \
+  --function swap_x_to_y \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_btc::DEVNET_BTC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    0x8c22e68390692d3824ad8f694ccb98a91f76c3fa \
+    0x069f8ab7689ec1459355cf80c076c21fd0623adc \
+  --gas-budget 1000
+'''
+
+[tasks."admin:init:ETH/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function create_pool \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    30 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:add:ETH/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function add_liquidity \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    0xcc019b8c928f64c791698fc2202df599a1fd8ae9 \
+    0xf491dd721fc4a06ea95de18610d66b6f5efc5d61 \
+    0x89c760727b548b111e2bee1933c18674be1e4063 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:swap:ETH/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \ \
+  --module dex \
+  --function swap_x_to_y \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    0x181ae05cec5bba5b4e73afc9691d52e5aebbf928 \
+    0x13a0e469813ca1fd80a31d78a8b2709bb6fd22a1 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:init:USDT/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function create_pool \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdt::DEVNET_USDT" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    30 \
+  --gas-budget 1000
+'''
+
+[tasks."admin:add:USDT/USDC"]
+script = '''
+sui client call \
+  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --module dex \
+  --function add_liquidity \
+  --type-args \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdt::DEVNET_USDT" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+  --args \
+    0xb79cda37109be3d2c949ef977fe3d4fc4a9027bf \
+    0x8a7d2cfa3004777123fbf61e38091314c914aaf4 \
+    0x89c760727b548b111e2bee1933c18674be1e4063 \
+  --gas-budget 1000
+'''
