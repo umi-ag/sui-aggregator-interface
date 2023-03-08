@@ -8,4 +8,4 @@ Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-frame
 [addresses]
 sui = "0x2"
 # umaswap = "0x0"
-umaswap = "0xf67b44dd811b7b3b84005a22cec1e146b3ecbcad"
+umaswap = "0xf1b482548468e45b79eccb2dd1096b51191f55ef"
