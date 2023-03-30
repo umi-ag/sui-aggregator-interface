@@ -31,8 +31,8 @@ sui client call \
   --module dex \
   --function create_pool \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_btc::DEVNET_BTC" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_btc::testnet_BTC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_usdc::testnet_USDC" \
   --args \
     30 \
   --gas-budget 1000
@@ -45,8 +45,8 @@ sui client call \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_btc::DEVNET_BTC" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_btc::testnet_BTC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_usdc::testnet_USDC" \
   --args \
     0xa039c832e1b96fe2d999fc97747ced8f71884e33 \
     0xcae9e5f66d567429c8e11e32872024d3b47d767b \
@@ -61,8 +61,8 @@ sui client call \
   --module dex \
   --function swap_x_to_y \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_btc::DEVNET_BTC" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_btc::testnet_BTC" \
+    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::testnet_usdc::testnet_USDC" \
   --args \
     0x8c22e68390692d3824ad8f694ccb98a91f76c3fa \
     0x069f8ab7689ec1459355cf80c076c21fd0623adc \
@@ -76,8 +76,8 @@ sui client call \
   --module dex \
   --function create_pool \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_eth::testnet_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdc::testnet_USDC" \
   --args \
     30 \
   --gas-budget 1000
@@ -90,8 +90,8 @@ sui client call \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_eth::testnet_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdc::testnet_USDC" \
   --args \
     0xcc019b8c928f64c791698fc2202df599a1fd8ae9 \
     0xf491dd721fc4a06ea95de18610d66b6f5efc5d61 \
@@ -106,8 +106,8 @@ sui client call \
   --module dex \
   --function swap_x_to_y \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_eth::testnet_ETH" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdc::testnet_USDC" \
   --args \
     0x181ae05cec5bba5b4e73afc9691d52e5aebbf928 \
     0x13a0e469813ca1fd80a31d78a8b2709bb6fd22a1 \
@@ -121,8 +121,8 @@ sui client call \
   --module dex \
   --function create_pool \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdt::DEVNET_USDT" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdt::testnet_USDT" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdc::testnet_USDC" \
   --args \
     30 \
   --gas-budget 1000
@@ -135,8 +135,8 @@ sui client call \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdt::DEVNET_USDT" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdt::testnet_USDT" \
+    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::testnet_usdc::testnet_USDC" \
   --args \
     0xb79cda37109be3d2c949ef977fe3d4fc4a9027bf \
     0x8a7d2cfa3004777123fbf61e38091314c914aaf4 \

@@ -8,7 +8,7 @@ script = '''
 sui move test
 '''
 
-[tasks."nojo:deploy:devnet"]
+[tasks."nojo:deploy:testnet"]
 dependencies = [
     "nojo:build", # "test:module",
 ]
