@@ -9,7 +9,7 @@ script = '''
 sui move test
 '''
 
-[tasks."udo:deploy:devnet"]
+[tasks."udo:deploy:testnet"]
 dependencies = [
   "udo:build", # "test:module",
 ]
