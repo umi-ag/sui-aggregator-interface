@@ -106,7 +106,7 @@ module udoswap::dex {
     }
 
     entry fun swap_x_to_y<X, Y>(pool: &mut Pool<X, Y>, coin_x: Coin<X>, ctx: &mut TxContext) {
-        transfer::transfer(
+        transfer::public_transfer(
             swap_x_to_y_direct(pool, coin_x, ctx),
             tx_context::sender(ctx)
         )
@@ -142,7 +142,7 @@ module udoswap::dex {
     ) {
         let sernder = tx_context::sender(ctx);
 
-        transfer::transfer(
+        transfer::public_transfer(
             swap_y_to_x_direct(pool, coin_y, ctx),
             tx_context::sender(ctx)
         )
@@ -175,7 +175,7 @@ module udoswap::dex {
         pool: &mut Pool<X, Y>, coin_x: Coin<X>, coin_y: Coin<Y>, ctx: &mut TxContext
     )
     {
-        transfer::transfer(
+        transfer::public_transfer(
             add_liquidity_direct(pool, coin_x, coin_y, ctx),
             tx_context::sender(ctx)
         );
@@ -225,8 +225,8 @@ module udoswap::dex {
         let (coin_x, coin_y) = remove_liquidity(pool, lsp, ctx);
         let sender = tx_context::sender(ctx);
 
-        transfer::transfer(coin_x, sender);
-        transfer::transfer(coin_y, sender);
+        transfer::public_transfer(coin_x, sender);
+        transfer::public_transfer(coin_y, sender);
     }
 
     /// Remove liquidity from the `Pool` by burning `Coin<LSP>`.

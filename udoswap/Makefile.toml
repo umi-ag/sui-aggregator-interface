@@ -14,7 +14,7 @@ dependencies = [
   "udo:build", # "test:module",
 ]
 script = '''
-sui client publish --gas-budget 30000
+sui client publish --gas-budget 100000000 --skip-dependency-verification
 '''
 
 [tasks."admin:init:default"]

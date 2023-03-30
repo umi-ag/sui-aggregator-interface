@@ -1,5 +1,5 @@
 [package]
-name = "umaswap"
+name = "nojoswap"
 version = "0.0.1"
 
 [dependencies]
@@ -7,5 +7,4 @@ Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-frame
 
 [addresses]
 sui = "0x2"
-# umaswap = "0x0"
-umaswap = "0x61eea51ba7688c8d05e45e13bcbfdd36450832d58ac5d061b046a1df5d489807"
+nojoswap = "0x0"

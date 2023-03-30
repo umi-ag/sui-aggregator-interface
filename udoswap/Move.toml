@@ -3,9 +3,10 @@ name = "udoswap"
 version = "0.0.1"
 
 [dependencies]
-Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet"}
+# Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "testnet"}
+Sui = {git = "https://github.com/MystenLabs/sui", rev = "testnet", subdir = "crates/sui-framework/packages/sui-framework"}
 
 [addresses]
 sui = "0x2"
 # udoswap = "0x0"
-udoswap = "0xcf5728450cc8a2a6b328bee8505c088011414cf0"
+udoswap = "0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c"

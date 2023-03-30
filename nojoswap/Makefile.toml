@@ -1,0 +1,17 @@
+[tasks."nojo:build"]
+script = '''
+sui move build
+'''
+
+[tasks."nojo:test"]
+script = '''
+sui move test
+'''
+
+[tasks."nojo:deploy:devnet"]
+dependencies = [
+    "nojo:build", # "test:module",
+]
+script = '''
+sui client publish --gas-budget 30000
+'''
