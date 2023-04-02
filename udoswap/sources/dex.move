@@ -59,11 +59,10 @@ module udoswap::dex {
     ///
     /// Share is calculated based on Uniswap's constant product formula:
     ///  liquidity = sqrt( X * Y )
-    entry fun create_pool<X, Y>(
+    public entry fun create_pool<X, Y>(
         fee_percent: u64,
         ctx: &mut TxContext
-    )
-    {
+    ) {
         assert!(fee_percent >= 0 && fee_percent < 10000, E_WRONG_FEE);
 
         let lsp_supply = balance::create_supply(LSP<X, Y> {});
@@ -140,8 +139,6 @@ module udoswap::dex {
     entry fun swap_y_to_x<X, Y>(
         pool: &mut Pool<X, Y>, coin_y: Coin<Y>, ctx: &mut TxContext
     ) {
-        let sernder = tx_context::sender(ctx);
-
         transfer::public_transfer(
             swap_y_to_x_direct(pool, coin_y, ctx),
             tx_context::sender(ctx)
