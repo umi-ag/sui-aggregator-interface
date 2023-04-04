@@ -1,15 +1,8 @@
 module nojoswap::amm {
-    use std::type_name::{Self, TypeName};
-    use std::vector;
-    use sui::object::{Self, UID, ID};
-    use sui::balance::{Self, Balance, Supply};
-    use sui::coin::{Self, Coin};
-    use sui::balance::{create_supply};
-    use sui::tx_context::{Self, TxContext};
-    use sui::transfer;
-    use sui::event;
-    use sui::math;
-    use sui::table::{Self, Table};
+    use sui::object::UID;
+    use sui::balance::{Balance, Supply};
+
+    struct LP<phantom A, phantom B> has drop { }
 
     struct Pool<phantom A, phantom B> has key {
         id: UID,
@@ -22,14 +15,19 @@ module nojoswap::amm {
     }
 
     public fun swap_a<A, B>(
-        pool: &mut Pool<A, B>, input: Balance<A>, min_out: u64,
+        _pool: &mut Pool<A, B>,
+        _input: Balance<A>,
+        _min_out: u64,
     ): Balance<B> {
         abort 0
     }
 
     public fun swap_b<A, B>(
-        pool: &mut Pool<A, B>, input: Balance<B>, min_out: u64
+        _pool: &mut Pool<A, B>,
+        _input: Balance<B>,
+        _min_out: u64
     ): Balance<A> {
         abort 0
     }
 }
+

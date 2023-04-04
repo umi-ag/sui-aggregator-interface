@@ -140,8 +140,6 @@ module udoswap::dex {
     entry fun swap_y_to_x<X, Y>(
         pool: &mut Pool<X, Y>, coin_y: Coin<Y>, ctx: &mut TxContext
     ) {
-        let sernder = tx_context::sender(ctx);
-
         transfer::public_transfer(
             swap_y_to_x_direct(pool, coin_y, ctx),
             tx_context::sender(ctx)
