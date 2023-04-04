@@ -104,7 +104,7 @@ module udoswap::dex {
         coin::from_balance(lsp, ctx)
     }
 
-    entry fun swap_x_to_y<X, Y>(pool: &mut Pool<X, Y>, coin_x: Coin<X>, ctx: &mut TxContext) {
+    public entry fun swap_x_to_y<X, Y>(pool: &mut Pool<X, Y>, coin_x: Coin<X>, ctx: &mut TxContext) {
         transfer::public_transfer(
             swap_x_to_y_direct(pool, coin_x, ctx),
             tx_context::sender(ctx)
@@ -136,7 +136,7 @@ module udoswap::dex {
 
     /// Entry point for the `swap_token` method. Sends swapped SUI
     /// to the sender.
-    entry fun swap_y_to_x<X, Y>(
+    public entry fun swap_y_to_x<X, Y>(
         pool: &mut Pool<X, Y>, coin_y: Coin<Y>, ctx: &mut TxContext
     ) {
         transfer::public_transfer(
