@@ -59,7 +59,7 @@ module udoswap::dex {
     ///
     /// Share is calculated based on Uniswap's constant product formula:
     ///  liquidity = sqrt( X * Y )
-    entry fun create_pool<X, Y>(
+    public entry fun create_pool<X, Y>(
         fee_percent: u64,
         ctx: &mut TxContext
     )
