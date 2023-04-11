@@ -1,5 +1,6 @@
 [package]
 name = "nojoswap"
+published-at = "0x834e4c19981db7fe33755a6d523f9e0bb13cb8818c72c5fb115175577b8e9e00"
 version = "0.0.1"
 
 [dependencies]
