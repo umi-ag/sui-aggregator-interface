@@ -1,11 +1,11 @@
 [package]
 name = "nojoswap"
-published-at = "0x834e4c19981db7fe33755a6d523f9e0bb13cb8818c72c5fb115175577b8e9e00"
+published-at = "0x9d44103477bbc9b059d73b06dd5dbf2962f7e7460befc857dd351fb7b367472e"
 version = "0.0.1"
 
 [dependencies]
 Sui = {git = "https://github.com/MystenLabs/sui", rev = "testnet", subdir = "crates/sui-framework/packages/sui-framework"}
 
 [addresses]
-nojoswap = "0x834e4c19981db7fe33755a6d523f9e0bb13cb8818c72c5fb115175577b8e9e00"
+nojoswap = "0x9d44103477bbc9b059d73b06dd5dbf2962f7e7460befc857dd351fb7b367472e"
 sui = "0x2"
