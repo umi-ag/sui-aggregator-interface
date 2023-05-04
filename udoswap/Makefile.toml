@@ -27,37 +27,37 @@ dependencies = [
 [tasks."admin:init:BTC/USDC"]
 script = '''
 sui client call \
-  --package 0x66ab4e949f94d82083e944dbfd516243b083efd6 \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function create_pool \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_btc::DEVNET_BTC" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_btc::DEVNET_BTC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
     30 \
-  --gas-budget 1000
+  --gas-budget 100000000
 '''
 
 [tasks."admin:add:BTC/USDC"]
 script = '''
 sui client call \
-  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_btc::DEVNET_BTC" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_btc::DEVNET_BTC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
-    0xa039c832e1b96fe2d999fc97747ced8f71884e33 \
-    0xcae9e5f66d567429c8e11e32872024d3b47d767b \
-    0x89c760727b548b111e2bee1933c18674be1e4063 \
-  --gas-budget 1000
+    0xb15cd58ef08a7d6f8f846c0e113b9eb10be5a56eb5d2c7c072b8b8cd786f62e1 \
+    0x645b7e227ad8b65fb41e1c97be0fb348af939e9411928707643707ad88e28aa1 \
+    0x395534040e6716daba7094cf44325fd7015bdde18827949f8b455b583c371dee \
+  --gas-budget 100000000
 '''
 
 [tasks."admin:swap:BTC/USDC"]
 script = '''
 sui client call \
-  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \ \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function swap_x_to_y \
   --type-args \
@@ -72,37 +72,37 @@ sui client call \
 [tasks."admin:init:ETH/USDC"]
 script = '''
 sui client call \
-  --package 0x66ab4e949f94d82083e944dbfd516243b083efd6 \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function create_pool \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_eth::DEVNET_ETH" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_eth::DEVNET_ETH" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
     30 \
-  --gas-budget 1000
+  --gas-budget 100000000
 '''
 
 [tasks."admin:add:ETH/USDC"]
 script = '''
 sui client call \
-  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_eth::DEVNET_ETH" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_eth::DEVNET_ETH" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
-    0xcc019b8c928f64c791698fc2202df599a1fd8ae9 \
-    0xf491dd721fc4a06ea95de18610d66b6f5efc5d61 \
-    0x89c760727b548b111e2bee1933c18674be1e4063 \
-  --gas-budget 1000
+    0xb33f0c3e0c4ae9d9191a59cb68cfd63ed64a914a2e895c96b72665d3fa6782ac \
+    0x4e1535c07956aae3f9792a017f313dcd902bf37235ac1af704ea0b6a35cd190d \
+    0xbf189ae50c9c98e462a0ef59321dd5db4c23940a459dd04e5094218c79c1dbc0 \
+  --gas-budget 100000000
 '''
 
 [tasks."admin:swap:ETH/USDC"]
 script = '''
 sui client call \
-  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \ \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function swap_x_to_y \
   --type-args \
@@ -117,29 +117,29 @@ sui client call \
 [tasks."admin:init:USDT/USDC"]
 script = '''
 sui client call \
-  --package 0x66ab4e949f94d82083e944dbfd516243b083efd6 \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function create_pool \
   --type-args \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdt::DEVNET_USDT" \
-    "0x4a5fab010acca25452a12b8ce2b125b772ad9b16::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdt::DEVNET_USDT" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
     30 \
-  --gas-budget 1000
+  --gas-budget 100000000
 '''
 
 [tasks."admin:add:USDT/USDC"]
 script = '''
 sui client call \
-  --package 0x7ca128768f037d562829509d589ca40f8a71c75b \
+  --package 0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c \
   --module dex \
   --function add_liquidity \
   --type-args \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdt::DEVNET_USDT" \
-    "0xae55acd146e9e8343c1da06a57dbadb8c9975a5d::devnet_usdc::DEVNET_USDC" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdt::DEVNET_USDT" \
+    "0xda50fbb5eeb573e9825117b45564fd83abcdb487b5746f37a4a7c368f34a71ef::devnet_usdc::DEVNET_USDC" \
   --args \
-    0xb79cda37109be3d2c949ef977fe3d4fc4a9027bf \
-    0x8a7d2cfa3004777123fbf61e38091314c914aaf4 \
-    0x89c760727b548b111e2bee1933c18674be1e4063 \
-  --gas-budget 1000
+    0x971ab08fe8c56d2fe5e9a314dcad406117a695956d68b6efcfab9cceb3ddc5f2 \
+    0xbd073c568a3724d555aa6df5141738d2afd27ac0188a9480e6d89687ddb79527 \
+    0xb89915a64b46bfa142d8f89bca6f12940b3f0818e85e20465886696e6371519e \
+  --gas-budget 100000000
 '''

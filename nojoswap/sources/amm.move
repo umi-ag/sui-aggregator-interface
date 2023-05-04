@@ -4,6 +4,8 @@ module nojoswap::amm {
 
     struct LP<phantom A, phantom B> has drop { }
 
+    struct LP<phantom A, phantom B> has drop { }
+
     struct Pool<phantom A, phantom B> has key {
         id: UID,
         balance_a: Balance<A>,

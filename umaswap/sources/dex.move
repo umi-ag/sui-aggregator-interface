@@ -27,9 +27,7 @@ module umaswap::dex {
     fun init(_: &mut TxContext) {}
 
     public fun swap_x_to_y_direct<X, Y>(
-        _pool: &mut Pool<X, Y>,
-        _coin_x: Coin<X>,
-        _ctx: &mut TxContext
+        _pool: &mut Pool<X, Y>, _coin_x: Coin<X>, _ctx: &mut TxContext
     ): Coin<Y> {
         abort 0
     }
@@ -37,10 +35,12 @@ module umaswap::dex {
     /// Swap `Coin<T>` for the `Coin<SUI>`.
     /// Returns the swapped `Coin<SUI>`.
     public fun swap_y_to_x_direct<X, Y>(
-        _pool: &mut Pool<X, Y>,
-        _coin_y: Coin<Y>,
-        _ctx: &mut TxContext
+        _pool: &mut Pool<X, Y>, _coin_y: Coin<Y>, _ctx: &mut TxContext
     ): Coin<X> {
         abort 0
     }
+
+    public fun price_x_to_y<X, Y>(_pool: &Pool<X, Y>, _delta_y: u64): u64 { 1 }
+
+    public fun price_y_to_x<X, Y>(_pool: &Pool<X, Y>, _delta_x: u64): u64 { 1 }
 }

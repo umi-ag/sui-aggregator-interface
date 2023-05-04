@@ -8,5 +8,5 @@ Sui = {git = "https://github.com/MystenLabs/sui", rev = "testnet", subdir = "cra
 
 [addresses]
 sui = "0x2"
-# # udoswap = "0x0"
+# udoswap = "0x0"
 udoswap = "0xf0e20b74b25ff952e9dc906b53bea2a5f33fd33f7d2fc56c754df96f9c66f30c"
