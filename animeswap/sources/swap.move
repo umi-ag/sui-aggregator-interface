@@ -2,6 +2,9 @@ module animeswap::animeswap {
     use sui::object::UID;
     use sui::balance::{Balance, Supply};
     use sui::clock::{Self, Clock};
+    use sui::coin::{Self, Coin};
+    use sui::tx_context::{Self, TxContext};
+    use std::ascii::String;
 
     struct LPCoin<phantom X, phantom Y> has drop {}
 
@@ -16,6 +19,34 @@ module animeswap::animeswap {
         last_price_y_cumulative: u128,
         k_last: u128,
         locked: bool,
+    }
+
+    /// LiquidityPool is dynamically added to this
+    struct LiquidityPools has key {
+        id: UID,
+        admin_data: AdminData,
+        pair_info: PairInfo
+    }
+
+    /// global config
+    struct AdminData has store, copy, drop {
+        dao_fee_to: address,
+        admin_address: address,
+        dao_fee: u64,           // 1/(dao_fee+1) comes to dao_fee_to if dao_fee_on
+        swap_fee: u64,          // BP, swap_fee * 1/10000
+        dao_fee_on: bool,       // default: true
+        is_pause: bool,         // pause swap
+    }
+
+    /// events
+    struct PairMeta has drop, store, copy {
+        coin_x: String,
+        coin_y: String,
+    }
+
+    /// pair list
+    struct PairInfo has store, copy, drop {
+        pair_list: vector<PairMeta>,
     }
 
     /// entry, swap from exact X to Y
