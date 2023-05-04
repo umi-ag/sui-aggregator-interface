@@ -1,0 +1,17 @@
+[tasks."anime:build"]
+script = '''
+sui move build
+'''
+
+[tasks."anime:test"]
+script = '''
+sui move test
+'''
+
+[tasks."anime:deploy:devnet"]
+dependencies = [
+    "anime:build", # "test:module",
+]
+script = '''
+sui client publish --gas-budget 30000
+'''

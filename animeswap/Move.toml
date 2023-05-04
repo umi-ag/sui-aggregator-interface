@@ -1,0 +1,11 @@
+[package]
+name = "animeswap"
+published-at = "0x88d362329ede856f5f67867929ed570bba06c975abec2fab7f0601c56f6a8cb1"
+version = "0.0.1"
+
+[dependencies]
+Sui = {git = "https://github.com/MystenLabs/sui", rev = "testnet", subdir = "crates/sui-framework/packages/sui-framework"}
+
+[addresses]
+animeswap = "0x88d362329ede856f5f67867929ed570bba06c975abec2fab7f0601c56f6a8cb1"
+sui = "0x2"
